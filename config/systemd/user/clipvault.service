@@ -1,0 +1,13 @@
+[Unit]
+Description=Wayland clipboard history manager, inspired by cliphist
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/sh -c 'wl-paste --watch clipvault store --ignore-pattern "^<meta http-equiv=" & wl-paste --type image --watch clipvault store'
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

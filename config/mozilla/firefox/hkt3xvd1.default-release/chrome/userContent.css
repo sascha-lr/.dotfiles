@@ -1,0 +1,16 @@
+@import url("colors.css");
+@import url("websites/github.css");
+@import url("websites/duckduckgo/duckduckgo.css");
+@import url("websites/vimium.css");
+@import url("websites/youtube.css");
+
+@-moz-document url("about:home"), url("about:newtab"), url("about:privatebrowsing"), url("about:blank") {
+    
+    :root, html, body {
+        --newtab-background-color: var(--surface_container_lowest) !important;
+        --newtab-background-color-secondary: var(--surface_container_lowest) !important;
+        
+        background-color: var(--surface_container_lowest) !important;
+        background: var(--surface_container_lowest) !important;
+    }
+}

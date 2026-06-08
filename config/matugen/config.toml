@@ -1,0 +1,67 @@
+[config]
+
+[config.wallpaper]
+# Whether to set the wallpaper or not
+set = true
+
+# The base command to run for applying the wallpaper.
+# Keywords like {{ image }} or anything that works inside of hooks works here.
+# You could also set a static color if you use the color keywords and the wallpaper setter supports it.
+command = "awww img --transition-fps 144 --transition-step 255 --transition-type center {{ image }}"
+
+# For example, killing the wallpaper daemon. Usage is like a normal hook.
+# pre_hook = ""
+
+[templates.waybar]
+input_path = '~/.config/matugen/waybar-colors.css'
+output_path = '~/.config/waybar/matugen-colors.css'
+post_hook = "pkill -SIGUSR2 waybar"
+
+[templates.hyprland]
+input_path = '~/.config/matugen/hyprland-colors.conf'
+output_path = '~/.config/hypr/colors.conf'
+# ...
+
+[templates.kitty]
+input_path = '~/.config/matugen/kitty-colors.conf'
+output_path = '~/.config/kitty/themes/Matugen.conf'
+post_hook = "kitty +kitten themes --reload-in=all Matugen"
+# ...
+
+[templates.yazi]
+input_path = '~/.config/matugen/yazi-theme.toml'
+output_path = '~/.config/yazi/theme.toml'
+# ...
+
+[templates.firefox]
+input_path = '~/.config/matugen/firefox-colors.css'
+output_path = '~/.config/mozilla/firefox/hkt3xvd1.default-release/chrome/colors.css'
+# ...
+
+[templates.btop]
+input_path = '~/.config/matugen/btop.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+post_hook = 'pkill -USR2 btop || true'
+# ...
+
+[templates.nvim]
+input_path = '~/.config/matugen/nvim-colors.lua'
+output_path = '~/.config/nvim/lua/config/matugen-colors.lua'
+post_hook = 'pkill -SIGUSR1 nvim'
+# ...
+
+[templates.rofi]
+input_path = '~/.config/matugen/rofi-colors.rasi'
+output_path = '~/.config/rofi/colors/matugen-colors.rasi'
+# ...
+
+[templates.gtk3]
+input_path = '~/.config/matugen/gtk-colors.css'
+output_path = '~/.config/gtk-3.0/matugen-colors.css'
+post_hook = 'gsettings set org.gnome.desktop.interface gtk-theme ""; gsettings set org.gnome.desktop.interface gtk-theme adw-gtk3-{{mode}}'
+# ...
+
+[templates.gtk4]
+input_path = '~/.config/matugen/gtk-colors.css'
+output_path = '~/.config/gtk-4.0/matugen-colors.css'
+# ...

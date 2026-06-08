@@ -1,0 +1,264 @@
+@-moz-document domain("duckduckgo.com") {
+
+    :root {
+        --theme-bg-global: var(--background) !important;
+        --theme-bg-header: var(--surface_container_low) !important;
+        --theme-bg-box: var(--surface_container) !important;
+        
+        --theme-col-txt-basic: var(--primary) !important;
+        --theme-col-txt-basic-sub: var(--primary) !important;
+        
+        --theme-col-txt-link: var(--primary) !important;
+        --theme-col-txt-url: var(--secondary) !important;
+        --theme-col-txt-url-visited: var(--secondary) !important;
+        
+        --theme-col-border: var(--outline_variant) !important;
+    }
+
+    .header__logo {
+        /* 1. Remove the old background image */
+        background-image: none !important;
+        
+        /* 2. Flood the box with your dynamic primary color */
+        background-color: var(--primary) !important;
+        
+        /* 3. Use your local SVG as a cookie cutter */
+        mask-image: url(./duckduckgo.svg) !important;
+        -webkit-mask-image: url(./duckduckgo.svg) !important;
+        
+        /* 4. Ensure the mask fits perfectly inside the box */
+        mask-size: contain !important;
+        -webkit-mask-size: contain !important;
+        mask-repeat: no-repeat !important;
+        -webkit-mask-repeat: no-repeat !important;
+        mask-position: center !important;
+        -webkit-mask-position: center !important;
+    }
+
+    /* Base & Typography */
+    html, body, .site-wrapper, .bg-transparent {
+        background-color: var(--background) !important;
+        color: var(--primary) !important;
+    }
+
+    h1, h2, h3, h4, h5, h6, .module__title, .result__snippet, .tile--img__title {
+        color: var(--primary) !important;
+    }
+
+    *:empty::before,
+    *:empty::after {
+        background-image: none !important;
+    }
+
+    /* Header & Navigation */
+    .header-wrap, .header {
+        background-color: var(--surface_container_low) !important;
+        border-bottom: 1px solid var(--outline_variant) !important;
+    }
+
+    .zcm__link {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        margin: 0 !important;
+        color: var(--primary) !important;
+        opacity: 0.8;
+    }
+    
+    .zcm__link:hover,
+    .zcm__link.is-active {
+        color: var(--primary) !important;
+        opacity: 1;
+    }
+    
+    .zcm__link.is-active {
+        border-bottom-color: var(--primary) !important;
+    }
+
+    /* Search Bar */
+    .searchbox, form.searchbox, .search-wrap, .search-wrap--home,
+    div:has(> #search_form_input) {
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        outline: none !important;
+    }
+
+    form:has(#search_form_input) {
+        background-color: var(--surface_container_lowest) !important;
+        border: 1px solid var(--outline) !important; 
+        border-radius: 24px !important;
+    }
+
+    form:has(#search_form_input):focus-within {
+        border-color: var(--primary) !important;
+        box-shadow: 0 0 0 1px var(--primary) !important;
+    }
+
+    form:has(#search_form_input) > div:empty,
+    form:has(#search_form_input) > span:empty,
+    div:empty:has(~ #search_form_input),
+    #search_form_input ~ div:empty {
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        outline: none !important;
+    }
+
+    #search_form_input,
+    #search_form_input_homepage,
+    .searchbox_input,
+    form.searchbox input[type="text"],
+    input[name="q"] {
+        -moz-appearance: none !important;
+        background: transparent !important;
+        color: var(--primary) !important; 
+        -moz-text-fill-color: var(--primary) !important; 
+        border: none !important;
+        box-shadow: none !important;
+        outline: none !important;
+    }
+
+    .searchbox_searchButton,
+    .searchbox_clearButton,
+    button[aria-label="Search"],
+    button[aria-label="Clear"],
+    .T265XEcezvjUhK71U8pN {
+        background: transparent !important;
+        color: var(--primary) !important;
+        fill: var(--primary) !important;
+        border: none !important;
+        outline: none !important;
+    }
+    
+    .T265XEcezvjUhK71U8pN:hover {
+        background-color: var(--surface_bright) !important;
+        color: var(--primary_fixed) !important;
+        fill: var(--primary_fixed) !important;
+    }
+
+    /* Search Results */
+    a, 
+    .result__a, 
+    .result__snippet a,
+    .result__title a,
+    a[data-testid="result-title-a"] {
+        color: var(--primary) !important;
+        text-decoration-color: var(--primary) !important;
+    }
+
+    a:visited, 
+    .result__a:visited, 
+    .result__snippet a:visited,
+    .result__title a:visited,
+    a[data-testid="result-title-a"]:visited {
+        color: var(--secondary) !important;
+        text-decoration-color: var(--secondary) !important;
+    }
+
+    a:hover, 
+    .result__title a:hover {
+        color: var(--primary_fixed_dim) !important;
+        text-decoration: underline !important;
+    }
+
+    .result__url, 
+    .result__url__domain,
+    .result__url__full,
+    .tile--img__domain {
+        color: var(--secondary) !important;
+    }
+
+    /* UI Modules & Dropdowns */
+    .module, 
+    .module__text, 
+    .module--about,
+    .dropdown, 
+    .modal__box, 
+    .popover {
+        background-color: var(--surface_container) !important;
+        border: 1px solid var(--outline_variant) !important;
+        border-radius: 12px !important;
+        color: var(--primary) !important;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    }
+    
+    .dropdown__item, 
+    .modal__list__item,
+    .module__toggle {
+        color: var(--primary) !important;
+    }
+    
+    .dropdown__item:hover, 
+    .modal__list__item:hover {
+        background-color: var(--surface_bright) !important;
+        color: var(--primary) !important;
+    }
+
+    /* Footer */
+    .site-footer,
+    .footer,
+    #footer_homepage,
+    .nav-footer {
+        background-color: var(--surface_container_lowest) !important;
+        border-top: 1px solid var(--outline_variant) !important;
+        color: var(--primary) !important;
+    }
+
+    .site-footer a,
+    .footer a,
+    #footer_homepage a,
+    .nav-footer a {
+        color: var(--primary) !important;
+        font-weight: normal !important;
+    }
+
+    .site-footer a:hover,
+    .footer a:hover,
+    #footer_homepage a:hover,
+    .nav-footer a:hover {
+        color: var(--primary) !important;
+        text-decoration: none !important;
+    }
+
+    /* React Dynamic Elements */
+    .SnptgjT2zdOhGYfNng6g.kFFXe30DOpq5j1hbWU1q,
+    .SnptgjT2zdOhGYfNng6g[aria-current="page"],
+    .kFFXe30DOpq5j1hbWU1q[aria-current="page"] {
+        color: var(--primary) !important;
+        border-bottom-color: var(--primary) !important;
+        box-shadow: inset 0 -3px 0 0 var(--primary), 0 3px 0 0 var(--primary) !important;
+    }
+
+    .SnptgjT2zdOhGYfNng6g.kFFXe30DOpq5j1hbWU1q::after,
+    .SnptgjT2zdOhGYfNng6g[aria-current="page"]::after,
+    .kFFXe30DOpq5j1hbWU1q[aria-current="page"]::after,
+    .SnptgjT2zdOhGYfNng6g.kFFXe30DOpq5j1hbWU1q::before {
+        background-color: var(--primary) !important;
+        border-color: var(--primary) !important;
+    }
+
+    nav.DrcPyihFGyKMlg6lpwsa,
+    ul.XvPRmQVeIoCP5lQhICTv,
+    .Rfx96grmLovPIeXAv6j6 {
+        mask-image: none !important;
+        -webkit-mask-image: none !important;
+        background-image: none !important;
+        box-shadow: none !important;
+    }
+
+    nav.DrcPyihFGyKMlg6lpwsa ~ div,
+    nav.DrcPyihFGyKMlg6lpwsa::before,
+    nav.DrcPyihFGyKMlg6lpwsa::after,
+    ul.XvPRmQVeIoCP5lQhICTv ~ div,
+    ul.XvPRmQVeIoCP5lQhICTv::before,
+    ul.XvPRmQVeIoCP5lQhICTv::after {
+        background: transparent !important;
+        background-image: none !important;
+        box-shadow: none !important;
+    }
+
+    div.footer {
+        display: none !important;
+    }
+}

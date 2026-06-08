@@ -1,0 +1,103 @@
+/*****----- Configuration -----*****/
+configuration {
+    show-icons:                  false;
+}
+
+/*****----- Global Properties -----*****/
+@import                          "~/.config/rofi/colors/matugen-colors.rasi"
+@import                          "~/.config/rofi/colors/catpuccin-colors.rasi"
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    west;
+    anchor:                      west;
+    fullscreen:                  false;
+    width:                       85px;
+    x-offset:                    30px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    cursor:                      "default";
+    background-color:            transparent;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     15px;
+    background-color:            transparent;
+    children:                    [ "listview" ];
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       3;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     15px;
+    background-color:            transparent;
+    text-color:                  @primary;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    padding:                     25px 10px;
+    border-radius:               100%;
+    cursor:                      pointer;
+}
+
+/* NORMAL STATE (Balanced) */
+element normal.normal, element alternate.normal {
+    background-color:            @surface-container-lowest-transparent-80;
+    text-color:                  @primary;
+}
+element selected.normal {
+    background-color:            @on-secondary-transparent-80;
+    text-color:                  @secondary;
+    border:                      2px solid;
+    border-color:                @primary;
+}
+
+/* ACTIVE STATE (Power-Saver) */
+element normal.active, element alternate.active {
+    background-color:            @surface-container-lowest-transparent-80;
+    text-color:                  @green;
+}
+element selected.active {
+    background-color:            @on-green-transparent-80;
+    text-color:                  @green;
+    border:                      2px solid;
+    border-color:                @green;
+}
+
+/* URGENT STATE (Performance) */
+element normal.urgent, element alternate.urgent {
+    background-color:            @surface-container-lowest-transparent-80;
+    text-color:                  @error;
+}
+element selected.urgent {
+    background-color:            @on-error-transparent-80;
+    text-color:                  @error;
+    border:                      2px solid;
+    border-color:                @error;
+}
+
+element-text {
+    font:                        "JetBrainsMono Nerd Font Propo 19.5";
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}

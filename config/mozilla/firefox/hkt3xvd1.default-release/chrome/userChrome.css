@@ -1,0 +1,139 @@
+@import url("colors.css");
+
+:root {
+    -moz-context-properties: fill, fill-opacity, stroke;
+    --lwt-toolbar-field-background-color: color-mix(in srgb, #000 25%, transparent) !important;
+    --lwt-toolbar-field-focus: var(--surface_container_lightest) !important;
+    --toolbar-field-background-color: color-mix(in srgb, #000 25%, transparent) !important;
+    --toolbar-field-focus-background-color: var(--surface_container) !important;
+}
+
+/* base window & toolbars */
+#main-window {
+    background: transparent !important;
+    -moz-appearance: none !important; 
+}
+
+/* force the initial split-second loading window to be dark */
+#tabbrowser-tabpanels,
+browser[type="content-primary"],
+browser[type="content"] {
+    background-color: var(--surface_container_lowest) !important; 
+}
+
+#navigator-toolbox,
+#sidebar-box {
+    background-color: color-mix(in srgb, var(--surface_container_lowest) 80%, transparent) !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#nav-bar,
+#TabsToolbar,
+#PersonalToolbar {
+    background-color: transparent !important;
+    background-image: none !important; 
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* global ui icons & text */
+.bookmark-item[container],
+.toolbarbutton-icon,
+.menuitem-iconic .menu-iconic-left,
+.menu-iconic-icon,
+.tab-close-button,
+#sidebar-button,
+#sidebar-switcher-target,
+#sidebar-close,
+.sidebar-placestree treechildren::-moz-tree-image,
+#sidebar-box .sidebar-icon,
+#urlbar .urlbar-icon,
+#urlbar .urlbar-page-action,
+#urlbar-search-button,
+.tabbrowser-tab[selected="true"] .tab-icon-image {
+    fill: var(--primary) !important;
+    color: var(--primary) !important;
+}
+
+/* hover states */
+toolbarbutton:hover .toolbarbutton-icon {
+    fill: var(--tertiary) !important;
+}
+
+.tab-close-button:hover,
+#sidebar-close:hover {
+    color: var(--tertiary) !important;
+    fill: var(--tertiary) !important;
+    background-color: var(--surface) !important;
+}
+
+/* active tab */
+.tabbrowser-tab[selected="true"] .tab-background {
+    background-color: color-mix(in srgb, var(--on_primary) 50%, transparent) !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+
+.tabbrowser-tab .tab-label {
+    color: var(--primary) !important;
+    text-shadow: none !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-label {
+    color: var(--primary) !important;
+    text-shadow: none !important;
+}
+
+/* address bar */
+#urlbar-background,
+#urlbar:hover > #urlbar-background,
+#urlbar[focused="true"] > #urlbar-background,
+#urlbar[open] > #urlbar-background {
+    background: var(--on_primary) !important;
+    background-color: var(--on_primary) !important;
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#urlbar-input-container {
+    background: transparent !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    border: none !important;
+}
+
+#urlbar-input,
+#urlbar-input::placeholder {
+    color: var(--primary) !important;
+    -moz-text-fill-color: var(--primary) !important;
+}
+
+menupopup, panel {
+    --panel-background: var(--surface_container) !important;
+    --panel-color: var(--primary) !important;
+    --menu-background-color: var(--surface_container) !important;
+    --menu-color: var(--primary) !important;
+    --arrowpanel-background: var(--surface_container) !important;
+    --arrowpanel-color: var(--primary) !important;
+}
+
+.panel-arrowcontent,
+.panel-subview-body,
+menupopup,
+menupopup > menuitem,
+menupopup > menu {
+    background-color: var(--surface_container) !important;
+    color: var(--primary) !important;
+    border-color: transparent !important;
+}
+
+menuitem:hover, 
+menu:hover,
+.subviewbutton:hover {
+    background-color: var(--primary) !important;
+    color: var(--on_primary) !important;
+}

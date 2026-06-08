@@ -1,0 +1,5 @@
+@-moz-document domain("vimium.github.io") {
+    :root, body {
+        background-color: var(--surface_container_lowest) !important;
+    }
+}

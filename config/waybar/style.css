@@ -1,0 +1,100 @@
+@import "matugen-colors.css";
+@import "catpuccin-colors.css";
+
+* {
+    all: unset;
+    font-family: Inter, JetBrainsMono Nerd Font Propo;
+    font-weight: 500;
+}
+
+.modules-left,
+.modules-center,
+#battery,
+#pulseaudio,
+#network {
+    background-color: alpha(@surface_container_lowest, 0.8);
+    border-radius: 99px;
+    border: solid 2px @primary;
+    margin-top: 15px;
+    padding: .75rem; 
+}
+
+.modules-left {
+    margin-left: 15px;
+}
+
+#battery,
+#pulseaudio,
+#network,
+#clock {
+    padding: 0 1.25rem;
+}
+
+#battery.good,
+#battery.charging.good,
+#battery.plugged.good {
+    border-color: @green;
+    color: @green;
+}
+
+#battery.warning,
+#battery.plugged.warning, 
+#battery.charging.warning {
+    border-color: @yellow;
+    color: @yellow;
+}
+
+#battery.critical,
+#battery.plugged.critical,
+#battery.charging.critical {
+    border-color: @error;
+    color: @error;
+}
+
+#pulseaudio {
+    border-color: @secondary;
+    color: @secondary;
+}
+
+#network {
+    margin-right: 15px;
+    border-color: @tertiary;
+    color: @tertiary;
+}
+
+#clock {
+    font-weight: 700;
+    color: @primary;
+}
+
+#workspaces button {
+    margin: 0 .25rem;
+    border-radius: 99px;
+    transition: all 200ms ease;
+    min-width: 1.5rem;
+    background-image: radial-gradient(circle, @on_surface 15%, transparent 16%);
+    opacity: .4;
+    color: transparent;
+}
+
+#workspaces button:not(.empty) {
+    background-image: radial-gradient(circle, @primary 15%, transparent 16%);
+    opacity: 1;
+}
+
+
+#workspaces button.active {
+    background-image: none;
+    min-width: 3rem;
+    background-color: @primary;
+    color: @on_primary;
+}
+
+#workspaces button:nth-child(1) {
+    margin-left: 0;
+}
+
+#workspaces button:nth-child(10) {
+    margin-right: 0;
+}
+

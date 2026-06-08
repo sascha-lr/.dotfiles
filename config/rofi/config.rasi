@@ -1,0 +1,4 @@
+@import "~/.config/rofi/colors/matugen-colors.rasi"
+@import "~/.config/rofi/keybinds.rasi"
+@import "~/.config/rofi/launcher.rasi"
+

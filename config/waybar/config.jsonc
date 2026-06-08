@@ -1,0 +1,133 @@
+{
+    "layer": "top",
+    "spacing": 18,
+    "modules-left": [
+        "hyprland/workspaces"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "battery",
+        "pulseaudio",
+        "network"
+    ],
+    "battery": {
+        "states": {
+            "good": 100,
+            "warning": 60,
+            "critical": 25
+        },
+        "format": "{capacity}  |  {icon}",
+        "format-charging": "{capacity}  |  {icon}",
+        "format-plugged": "{capacity}  |  {icon}",
+        "format-icons": {
+            "default": [
+                "󰂎",
+                "󰁺",
+                "󰁻",
+                "󰁼",
+                "󰁽",
+                "󰁾",
+                "󰁿",
+                "󰂀",
+                "󰂁",
+                "󰂂",
+                "󰁹"
+            ],
+            "charging": [
+                "󰢟",
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ],
+            "plugged": [
+                "󰢟",
+                "󰢜",
+                "󰂆",
+                "󰂇",
+                "󰂈",
+                "󰢝",
+                "󰂉",
+                "󰢞",
+                "󰂊",
+                "󰂋",
+                "󰂅"
+            ]
+        },
+    },
+    "clock": {
+        "format-alt": "{:%a, %d. %b  %H:%M}"
+    },
+    "hyprland/workspaces": {
+        "format": "<span>{windows}</span>",
+        "format-window-separator": "</span><span size='1'>",
+        "window-rewrite": {
+            "title<Neovim:.*>": "",
+            "title<Yazi:.*>": "",
+            "class<steam>": "",
+            "class<Steam>": "",
+            "class<steamwebhelper>": "",
+            "class<com.obsproject.Studio>": "󰐾",
+            "class<obsidian>": "󱁉",
+            "class<nvim>": "",
+            "class<yazi>": "",
+            "class<kitty>": "",
+            "class<firefox>": "",
+            "class<chromium>": "",
+            "class<discord>": "",
+        },
+        "window-rewrite-default": "",
+        "persistent-workspaces": {
+            "*": 10
+        },
+    },
+    "pulseaudio": {
+        "format": "{volume}  |  {icon}",
+        "format-bluetooth": "{volume}  |  {icon}",
+        "format-muted": "Muted  |  󰸈",
+        "format-icons": {
+            "headphone": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": [
+                "󰕿",
+                "󰖀",
+                "󰕾"
+            ]
+        },
+        "scroll-step": 1,
+        "on-click": "kitty -e pulsemixer",
+        "ignored-sinks": [
+            "Easy Effects Sink"
+        ]
+    },
+    "network": {
+        "interface": "wlp194s0",
+        "format": "{ifname}",
+        "format-wifi": "{essid}  |  {icon}",
+        "format-ethernet": "{ipaddr}/{cidr}  |  󰈀",
+        "format-disconnected": "Disconnected  |  󰤮",
+        "format-icons": [
+            "󰤟",
+            "󰤢",
+            "󰤥",
+            "󰤨"
+        ],
+        "tooltip-format": "{ifname} via {gwaddr} 󰈀",
+        "tooltip-format-wifi": "{signalStrength}  |  {icon}",
+        "tooltip-format-ethernet": "{ifname}  |  󰈀",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "kitty -e nmtui", //placeholder
+        "max-length": 50
+    }
+}

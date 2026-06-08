@@ -1,0 +1,14 @@
+[Unit]
+Description=awww Wayland Wallpaper Daemon
+PartOf=graphical-session.target
+After=graphical-session.target
+ConditionEnvironment=WAYLAND_DISPLAY
+
+[Service]
+ExecStart=/usr/bin/awww-daemon
+ExecStop=/usr/bin/awww kill
+Slice=background-graphical.slice
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

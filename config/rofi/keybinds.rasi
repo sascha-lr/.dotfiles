@@ -1,0 +1,13 @@
+configuration {
+    /* 1. Unblock vim keybinds */
+    kb-remove-char-back:         "BackSpace,Shift+BackSpace"; 
+    kb-accept-entry:             "Return,KP_Enter";           
+    kb-remove-to-eol:            "";                          
+    kb-mode-complete:            "";                          
+
+    /* 2. Remap to vim motions */
+    kb-row-down:                 "Down,Control+n,Control+j";
+    kb-row-up:                   "Up,Control+p,Control+k";
+    kb-mode-previous:            "Shift+Left,Control+Shift+Tab,Control+h";
+    kb-mode-next:                "Shift+Right,Control+Tab,Control+l";
+}

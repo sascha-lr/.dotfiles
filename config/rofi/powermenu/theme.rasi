@@ -1,0 +1,102 @@
+/*****----- Configuration -----*****/
+configuration {
+    show-icons:                  false;
+}
+
+/*****----- Global Properties -----*****/
+@import                          "~/.config/rofi/colors/matugen-colors.rasi"
+
+/*****----- Main Window -----*****/
+window {
+    transparency:                "real";
+    location:                    west;
+    anchor:                      west;
+    fullscreen:                  false;
+    width:                       85px;
+    x-offset:                    30px;
+    y-offset:                    0px;
+
+    enabled:                     true;
+    cursor:                      "default";
+    background-color:            transparent;
+}
+
+/*****----- Main Box -----*****/
+mainbox {
+    enabled:                     true;
+    spacing:                     15px;
+    background-color:            transparent;
+    children:                    [ "listview" ];
+}
+
+/*****----- Listview -----*****/
+listview {
+    enabled:                     true;
+    columns:                     1;
+    lines:                       5;
+    cycle:                       true;
+    dynamic:                     true;
+    scrollbar:                   false;
+    layout:                      vertical;
+    reverse:                     false;
+    fixed-height:                true;
+    fixed-columns:               true;
+    
+    spacing:                     15px;
+    background-color:            transparent;
+    text-color:                  @primary;
+    cursor:                      "default";
+}
+
+/*****----- Elements -----*****/
+element {
+    enabled:                     true;
+    padding:                     25px 10px;
+    border-radius:               100%;
+    cursor:                      pointer;
+}
+
+/* NORMAL STATE (Lock, Suspend, Logout) */
+element normal.normal, element alternate.normal {
+    background-color:            @surface-container-lowest-transparent-80;
+    text-color:                  @primary;
+}
+element selected.normal {
+    background-color:            @on-primary-transparent-80;
+    text-color:                  @primary;
+    border:                      2px solid;
+    border-color:                @primary;
+}
+
+/* ACTIVE STATE (Reboot) */
+element normal.active, element alternate.active {
+    background-color:            @surface-container-lowest-transparent-80;
+    text-color:                  @tertiary;
+}
+element selected.active {
+    background-color:            @on-tertiary-transparent-80;
+    text-color:                  @tertiary;
+    border:                      2px solid;
+    border-color:                @tertiary;
+}
+
+/* URGENT STATE (Shutdown) */
+element normal.urgent, element alternate.urgent {
+    background-color:            @surface-container-lowest-transparent-80;
+    text-color:                  @error;
+}
+element selected.urgent {
+    background-color:            @on-error-transparent-80;
+    text-color:                  @error;
+    border:                      2px solid;
+    border-color:                @error;
+}
+
+element-text {
+    font:                        "JetBrainsMono Nerd Font Propo 19.5";
+    background-color:            transparent;
+    text-color:                  inherit;
+    cursor:                      inherit;
+    vertical-align:              0.5;
+    horizontal-align:            0.5;
+}
