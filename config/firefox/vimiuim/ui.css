@@ -1,0 +1,82 @@
+#vomnibar,
+#vomnibar * {
+    box-sizing: border-box !important;
+}
+
+#vomnibar {
+    background-color: var(--surface_container_lowest) !important;
+    border: 2px solid var(--surface_container) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+    padding: 10px 15px !important;
+    animation: none !important;
+    width: calc(100% - 40px) !important;
+    margin: 20px auto !important;
+}
+
+#vomnibar-search-area {
+    background-color: transparent !important;
+    border-bottom: 2px solid var(--surface_container) !important;
+    padding: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+#vomnibar input {
+    color: var(--primary) !important;
+    background-color: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+#vomnibar ul {
+    background-color: transparent !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+#vomnibar li {
+    background-color: transparent !important;
+    border-bottom: none !important;
+    padding: 10px 15px !important;
+    border-radius: 10px !important;
+    margin-bottom: 5px !important;
+}
+
+#vomnibar li.selected {
+    background-color: var(--primary) !important;
+}
+
+#vomnibar li.selected .title,
+#vomnibar li.selected .url,
+#vomnibar li.selected .source,
+#vomnibar li.selected .match {
+    color: var(--on_primary) !important;
+}
+
+span.url {
+    color: var(--primary) !important;
+}
+
+span.match {
+    color: var(--tertiary) !important;
+}
+
+div.vimiumHintMarker {
+    background-image: none !important;
+    background-color: var(--background) !important;
+    border: 2px solid var(--primary, #fff) !important;
+    border-radius: 6px !important;
+    padding: 3px 6px !important;
+}
+
+div.vimiumHintMarker span {
+    color: var(--primary, #fff) !important;
+    font-family: "JetBrainsMono Nerd Font Mono", monospace !important;
+    font-size: 14px !important;
+    font-weight: bold !important;
+    text-shadow: none !important;
+}
+
+div.vimiumHintMarker>.matchingCharacter {
+    color: var(--tertiary, #f38ba8) !important;
+}
