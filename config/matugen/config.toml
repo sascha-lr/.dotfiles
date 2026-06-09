@@ -35,7 +35,7 @@ output_path = '~/.config/yazi/theme.toml'
 
 [templates.firefox]
 input_path = '~/.config/matugen/firefox-colors.css'
-output_path = '~/.config/mozilla/firefox/hkt3xvd1.default-release/chrome/colors.css'
+### output_path = '~/.config/mozilla/firefox/<YOUR FIREFOX STRING>/chrome/colors.css'
 # ...
 
 [templates.btop]
